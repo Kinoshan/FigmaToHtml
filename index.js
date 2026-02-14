@@ -1,9 +1,10 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 
 async function launchGoogle() {
   console.log('Starting Puppeteer...');
   
   const browser = await puppeteer.launch({
+    executablePath: '/usr/bin/chromium',
     headless: true,
     args: [
       '--no-sandbox',
